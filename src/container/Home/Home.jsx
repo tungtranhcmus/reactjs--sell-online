@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import classnames from 'classnames/bind'
 import styles from './Home.module.css'
 import logoApp from '../../assets/logoApp.png'
@@ -26,9 +27,9 @@ export default () => {
                         </div>
                         <div className={cx('div-search-none', 'd-inline', 'd-md-none')}>
                         </div>
-                        <div className={cx('div-menu', 'd-inline', 'd-md-none')}>
+                        <button className={cx('div-menu', 'd-inline', 'd-md-none')}>
                             <img src={menu} alt='logo' className={cx('icon-search')} />
-                        </div>
+                        </button>
                         <div className={cx('div-info')}>
                             <p className={cx('txt-nomal', 'd-none', 'd-md-flex')}>NHỚ EM</p>
                         </div>
@@ -41,17 +42,19 @@ export default () => {
                         />
                     </div>
                     <div className={cx('container-categories', 'd-none', 'd-md-flex')}>
-                        <p className={cx('txt-nomal')}>GIÀY</p>
-                        <p className={cx('txt-nomal')}>TÚI XÁCH</p>
-                        <p className={cx('txt-nomal')}>BALO</p>
-                        <p className={cx('txt-nomal')}>VÍ BÓP</p>
-                        <p className={cx('txt-nomal')}>DÉP & GUỐC</p>
-                        <p className={cx('txt-nomal')}>PHỤ KIỆN</p>
-                        <p className={cx('txt-nomal')}>GIFTCARD</p>
+                        <Link to="/cart">
+                            <p className={cx('txt-category')}>GIÀY</p>
+                        </Link>
+                        <a href='./' className={cx('txt-category')}>TÚI XÁCH</a>
+                        <a href='./' className={cx('txt-category')}>BALO</a>
+                        <a href='./' className={cx('txt-category')}>VÍ BÓP</a>
+                        <a href='./' className={cx('txt-category')}>DÉP & GUỐC</a>
+                        <a href='./' className={cx('txt-category')}>PHỤ KIỆN</a>
+                        <a href='./' className={cx('txt-category')}>GIFTCARD</a>
                     </div>
                 </div>
             </div>
-            <div className={cx('div-line', 'd-none', 'd-md-flex')} />
+            {/* <div className={cx('div-line', 'd-none', 'd-md-flex')} /> */}
             <div className={cx('container')}>
                 <p className={cx('txt-nomal')}>Trang chủ - Túi Xách - Balo</p>
                 <div className={cx('div-filter')}>
@@ -63,6 +66,21 @@ export default () => {
                 </div>
                 <div className={cx('row')}>
                     {products.map((product) => (<Product {...product} />))}
+                </div>
+                <div className={cx('div-paging')}>
+                    <button className={cx('button-paging')}>
+                        <p className={cx('txt-nomal')}>1</p>
+                    </button>
+                    <button className={cx('button-paging')}>
+                        <p className={cx('txt-nomal')}>2</p>
+                    </button>
+                    <p className={cx('txt-nomal', 'marginHoz')}>...</p>
+                    <button className={cx('button-paging')}>
+                        <p className={cx('txt-nomal')}>3</p>
+                    </button>
+                    <button className={cx('button-paging')}>
+                        <p className={cx('txt-nomal')}>4</p>
+                    </button>
                 </div>
                 <div className={cx('row', 'div-bottom')}>
                     <div className={cx('col-6', 'col-sm-4', 'col-md-3',)}>
