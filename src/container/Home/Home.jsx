@@ -12,6 +12,9 @@ import { products } from '../../utils/contans'
 const cx = classnames.bind(styles)
 
 export default () => {
+
+    const [isOnpen, setIsOpen] = React.useState(false)
+
     return (
         <div>
             <div className={cx('container-all')}>
@@ -27,7 +30,11 @@ export default () => {
                         </div>
                         <div className={cx('div-search-none', 'd-inline', 'd-md-none')}>
                         </div>
-                        <button className={cx('div-menu', 'd-inline', 'd-md-none')}>
+                        <button
+                            onClick={() => {
+                                setIsOpen(true)
+                            }}
+                            className={cx('div-menu', 'd-inline', 'd-md-none')}>
                             <img src={menu} alt='logo' className={cx('icon-search')} />
                         </button>
                         <div className={cx('div-info')}>
@@ -110,6 +117,21 @@ export default () => {
                 </div>
 
                 <p className={cx('txt-policy')}>{'Công ty TNHH MTV Global Fashion. Văn phòng: Lầu 4 tòa nhà ACM số 96 Cao Thắng phường 04 quận 03 TP Hồ Chí Minh. GP số 0314657558 do sở KHĐT Tp Hồ Chí Minh cấp lần đầu ngày 05/10/2017'}</p>
+            </div>
+            <div className={cx('constainer-menu', { 'constainer-menu-full-height': isOnpen })}>
+                <button
+                    onClick={() => {
+                        setIsOpen(false)
+                    }}
+                    className={cx('div-menu', 'd-inline', 'd-md-none')}>
+                    <img src={menu} alt='logo' className={cx('icon-search')} />
+                </button>
+                <a href='./' className={cx('txt-category')}>TÚI XÁCH</a>
+                <a href='./' className={cx('txt-category')}>BALO</a>
+                <a href='./' className={cx('txt-category')}>VÍ BÓP</a>
+                <a href='./' className={cx('txt-category')}>DÉP & GUỐC</a>
+                <a href='./' className={cx('txt-category')}>PHỤ KIỆN</a>
+                <a href='./' className={cx('txt-category')}>GIFTCARD</a>
             </div>
         </div>
     )
