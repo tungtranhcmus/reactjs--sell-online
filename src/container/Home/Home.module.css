@@ -105,11 +105,9 @@
     font-family: nunito-sans;
     font-size: 14px;
     color: #F15B67;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 .button {
-    height: 35px;
+    height: 45px;
     justify-content: center;
     border: 1px solid #F15B67;
     background-color: white;
